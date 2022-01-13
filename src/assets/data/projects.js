@@ -1,45 +1,41 @@
 import { v4 as uuidv4 } from 'uuid';
-import ProjectImg from '../images/projectImg.png';
-import UTrackerImg from '../images/utracker.jpg';
-import GreenCtgImg from '../images/greenctg.jpg';
-import CoinTrackerImg from '../images/cointracker.jpg';
-import CavinImg from '../images/cavinimg.jpg';
+import MixOrMatch from '../images/mix-or-match.png';
+import GoogleBooksApi from '../images/google-books-api.png';
+import ReactBlog from '../images/react-blog.png';
+import BudgetApp from '../images/budget-app.png';
 
 const projects = [
   {
     id: uuidv4(),
-    name: 'U Tracker',
-    desc:
-      'An application to track your all data from one place. I developed the website and the mobile app',
-    img: UTrackerImg,
+    name: 'Mix Or Match Game',
+    desc: 'Mix-Or-Match is mind game for all ages. Used technologies:vanillajs, js OOP ',
+    githubLink: 'https://github.com/Saidmuhammad2002/matchGame',
+    demoLink: 'https://musing-kare-d1294a.netlify.app',
+    img: MixOrMatch,
   },
   {
     id: uuidv4(),
-    name: 'Green CTG',
-    desc:
-      'An app to help people to get an overview of how they can make the city beautiful.',
-    img: GreenCtgImg,
+    name: 'Google Books Api',
+    desc: 'This program find books with sepecial google-books-api  Used technologies:React, AntDesign',
+    githubLink: 'https://github.com/Saidmuhammad2002/googleBookApi',
+    demoLink: 'https://google-book-api.netlify.app/',
+    img: GoogleBooksApi,
   },
   {
     id: uuidv4(),
-    name: 'Coin Tracker',
-    desc:
-      'Using this app you can track any e coin. Also you will get a good advise about investment form the professional',
-    img: CoinTrackerImg,
+    name: 'The react blog',
+    desc: 'React Blog is a simple blog app with mockapi. Used technologies:React. Good staf:best useOf useEffect with axios and customHook',
+    githubLink: 'https://github.com/Saidmuhammad2002/blogs',
+    demoLink: 'https://blogs-api.netlify.app/',
+    img: ReactBlog,
   },
   {
     id: uuidv4(),
-    name: "Cavin's Portfolio",
-    desc:
-      'A portfolio for Cavin jr. A artist from New york city. The portfolio is made using ReactJs and GatsbyJs.',
-    img: CavinImg,
-  },
-  {
-    id: uuidv4(),
-    name: 'Tracking Soft',
-    desc:
-      'A tracking website that will show the performance of the website. Also you will get some useful advice to improve the performance.',
-    img: ProjectImg,
+    name: 'Budget App',
+    desc: 'Budget App helps you to calculate your budgets. Used technologies:React,React-Bootstrap. Good staf:best useOf localStorage, useContextHook and functionality',
+    githubLink: 'https://github.com/Saidmuhammad2002/react-budget-app--wds',
+    demoLink: 'https://react-budget-app-123.netlify.app/',
+    img: BudgetApp,
   },
 ];
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { AiOutlineGithub } from 'react-icons/ai';
+import { BiShowAlt } from 'react-icons/bi';
 import projectImg from '../assets/images/projectImg.png';
 
 const ProjectItemStyle = styled.div`
@@ -9,10 +11,38 @@ const ProjectItemStyle = styled.div`
     height: 400px;
     overflow: hidden;
     border-radius: 12px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     border: 3px solid var(--gray-2);
+    position: relative;
     img {
+      transition: transform 1s, filter 1s ease-in-out;
+      filter: blur(0);
+      transform: scale(1);
       height: 100%;
+    }
+    :hover {
+      img {
+        filter: blur(2px) brightness(40%);
+        transform: scale(1.2);
+      }
+      .icons__link {
+        transform: scale(1);
+      }
+    }
+    .icons__link {
+      transition: 1s;
+      transform: scale(0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      a {
+        width: 90%;
+        height: 90%;
+      }
     }
   }
   .projectItem__info {
@@ -43,14 +73,28 @@ export default function ProjectItem({
   img = projectImg,
   title = 'Project Name',
   desc = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, numquam.',
+  githubLink,
+  demoLink,
 }) {
   return (
     <ProjectItemStyle>
-      <Link to="/projects" className="projectItem__img">
+      <div className="projectItem__img">
         <img src={img} alt="project img" />
-      </Link>
+        <div className="icons__link">
+          {githubLink && (
+            <a href={githubLink} target="_blank" rel="noreferrer">
+              <AiOutlineGithub />
+            </a>
+          )}
+          {demoLink && (
+            <a href={demoLink} target="_blank" rel="noreferrer">
+              <BiShowAlt />
+            </a>
+          )}
+        </div>
+      </div>
       <div className="projectItem__info">
-        <Link to="#">
+        <Link to="/projects">
           <h3 className="projectItem__title">{title}</h3>
         </Link>
         <p className="projectItem__desc">{desc}</p>

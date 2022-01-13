@@ -118,8 +118,7 @@ export default function Footer() {
               },
               {
                 title: 'TUIT, Tashkent, Uzbekistan',
-                path:
-                  'https://www.google.com/maps/place/Tashkent+University+of+Information+Technologies/@41.3408335,69.2846262,17z/data=!3m1!4b1!4m5!3m4!1s0x38ae8b534175ed31:0x52a8f9d9414a2ad8!8m2!3d41.3408335!4d69.2868149',
+                path: 'https://www.google.com/maps/place/Tashkent+University+of+Information+Technologies/@41.3408335,69.2846262,17z/data=!3m1!4b1!4m5!3m4!1s0x38ae8b534175ed31:0x52a8f9d9414a2ad8!8m2!3d41.3408335!4d69.2868149',
               },
             ]}
           />
