@@ -31,13 +31,20 @@ export default function Button({
   btnLink = 'test',
   btnText = 'test',
   outline = false,
+  download = false,
 }) {
   return (
     <RubberBand>
       <ButtonStyle className="batton-wrapper" outline={outline}>
-        <Link className="button" to={btnLink}>
-          {btnText}
-        </Link>
+        {download ? (
+          <a href={btnLink} className="button" download>
+            {btnText}
+          </a>
+        ) : (
+          <Link className="button" to={btnLink}>
+            {btnText}
+          </Link>
+        )}
       </ButtonStyle>
     </RubberBand>
   );

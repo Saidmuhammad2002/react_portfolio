@@ -6,6 +6,7 @@ import Button from '../components/Button';
 import ContactBanner from '../components/ContactBanner';
 import AboutImg from '../assets/images/about-page-img.png';
 import AboutInfoItem from '../components/AboutInfoItem';
+import CV from '../assets/data/CV.pdf';
 
 const AvoutPageStyles = styled.div`
   padding: 20rem 0 10rem 0;
@@ -102,7 +103,7 @@ export default function About() {
                   place.
                 </PText>
               </div>
-              <Button btnText="Download CV" btnLink="#" />
+              <Button btnText="Download CV" btnLink={CV} download />
             </div>
             <div className="right">
               <img src={AboutImg} alt="about img" />
