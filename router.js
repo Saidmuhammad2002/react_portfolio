@@ -1,11 +1,14 @@
 import React from "react";
-import { Switch, Route } from "react-router";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 export default (
-  <Switch>
-    <Route path="/" />
-    <Route path="/about" />
-    <Route path="/projects" />
-    <Route path="/contact" />
-    <Route />
-  </Switch>
+  <BrowserRouter>
+    <Switch>
+      <Route path="/" />
+      <Route path="/about" />
+      <Route path="/projects" />
+      <Route path="/contact" />
+      <Route />
+    </Switch>
+  </BrowserRouter>
 );
