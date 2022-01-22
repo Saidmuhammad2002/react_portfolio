@@ -9,7 +9,7 @@ ReactDOM.render(
   <>
     <Helmet>
       <meta charSet="utf-8" />
-      <title>Saidmuhammads Best Portfolio ever</title>
+      <title>Dunyodagi eng boy odamning ikkinci</title>
       <link rel="canonical" href="https://saidmuhammadportfolio.netlify.app/" />
     </Helmet>
     <GlobalStyles />
