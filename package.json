@@ -26,7 +26,7 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "sitemap": "babel-node ./sitemap-generator.js",
+    "sitemap": "babel-node ./sitemap.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
