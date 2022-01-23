@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { MdSearch } from 'react-icons/md';
-import Fade from 'react-reveal/Fade';
-import SectionTitle from '../components/SectionTitle';
-import ProjectItem from '../components/ProjectItem';
-import ProjectInfo from '../assets/data/projects';
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import { MdSearch } from "react-icons/md";
+import Fade from "react-reveal/Fade";
+import SectionTitle from "../components/SectionTitle";
+import ProjectItem from "../components/ProjectItem";
+import ProjectInfo from "../assets/data/projects";
+import { Helmet } from "react-helmet-async";
 
 const ProjectsStyles = styled.div`
   padding: 10rem 0;
@@ -46,11 +47,11 @@ const ProjectsStyles = styled.div`
 `;
 
 export default function Projects() {
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
   const [projectData, setProjectData] = useState(ProjectInfo);
 
   useEffect(() => {
-    if (searchText === '') return;
+    if (searchText === "") return;
     setProjectData(() =>
       ProjectInfo.filter((item) =>
         item.name.toLowerCase().match(searchText.toLowerCase())
@@ -65,36 +66,49 @@ export default function Projects() {
     }
   }
   return (
-    <Fade right>
-      <ProjectsStyles>
-        <div className="container">
-          <SectionTitle heading="Projects" subheading="some of recent works" />
-          <div className="projects__searchBar">
-            <form>
-              <input
-                type="text"
-                value={searchText}
-                onChange={handleChange}
-                placeholder="Project Name"
-              />
-              <MdSearch className="searchIcon" />
-            </form>
+    <>
+      <Helmet>
+        <title>Projects</title>
+        <meta
+          name="description"
+          content="The projects that Saidmuhammad done"
+        />
+        <link rel="canonical" href="/projects" />
+      </Helmet>
+      <Fade right>
+        <ProjectsStyles>
+          <div className="container">
+            <SectionTitle
+              heading="Projects"
+              subheading="some of recent works"
+            />
+            <div className="projects__searchBar">
+              <form>
+                <input
+                  type="text"
+                  value={searchText}
+                  onChange={handleChange}
+                  placeholder="Project Name"
+                />
+                <MdSearch className="searchIcon" />
+              </form>
+            </div>
+            <div className="projects__allItems">
+              {projectData.map((item) => (
+                <ProjectItem
+                  className="project__item"
+                  key={item.id}
+                  title={item.name}
+                  desc={item.desc}
+                  img={item.img}
+                  githubLink={item.githubLink}
+                  demoLink={item.demoLink}
+                />
+              ))}
+            </div>
           </div>
-          <div className="projects__allItems">
-            {projectData.map((item) => (
-              <ProjectItem
-                className="project__item"
-                key={item.id}
-                title={item.name}
-                desc={item.desc}
-                img={item.img}
-                githubLink={item.githubLink}
-                demoLink={item.demoLink}
-              />
-            ))}
-          </div>
-        </div>
-      </ProjectsStyles>
-    </Fade>
+        </ProjectsStyles>
+      </Fade>
+    </>
   );
 }
