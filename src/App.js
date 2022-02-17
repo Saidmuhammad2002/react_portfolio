@@ -12,7 +12,7 @@ import { YMInitializer } from "react-yandex-metrika";
 export default function App() {
   return (
     <>
-      <YMInitializer accounts={[87541306]} />
+      <YMInitializer accounts={[87541306]} options={{ webvisor: true }} />
       <Router>
         <NavMenu />
         <SmoothScrollbar>
