@@ -18,6 +18,7 @@
     "react-smooth-scrollbar": "^8.0.6",
     "react-transition-group": "^4.4.1",
     "react-yandex-maps": "^4.6.0",
+    "react-yandex-metrika": "^2.6.0",
     "smooth-scrollbar": "^8.6.3",
     "styled-components": "^5.2.2",
     "swiper": "^6.8.4",
