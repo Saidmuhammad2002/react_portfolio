@@ -7,12 +7,10 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import SmoothScrollbar from "./components/SmoothScrollbar";
-import { YMInitializer } from "react-yandex-metrika";
 
 export default function App() {
   return (
     <>
-      <YMInitializer accounts={[87541306]} options={{ webvisor: true }} />
       <Router>
         <NavMenu />
         <SmoothScrollbar>

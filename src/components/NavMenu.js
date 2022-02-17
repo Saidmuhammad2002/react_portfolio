@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
-import { MdClose, MdMenu } from 'react-icons/md';
+import React, { useEffect, useState } from "react";
+import { NavLink, useHistory } from "react-router-dom";
+import styled from "styled-components";
+import { MdClose, MdMenu } from "react-icons/md";
+import { sendMetrics } from "../utils/metrica";
 
 const NavMenuStyles = styled.div`
   position: fixed;
@@ -27,7 +28,7 @@ const NavMenuStyles = styled.div`
   }
   a {
     display: inline-block;
-    font-family: 'RobotoMono Regular';
+    font-family: "RobotoMono Regular";
     padding: 1rem 2rem;
     font-size: 2rem;
     color: var(--gray-1);
@@ -89,7 +90,11 @@ const NavMenuStyles = styled.div`
 
 export default function NavMenu() {
   const [showNav, setShowNav] = useState(false);
+  const history = useHistory();
 
+  useEffect(() => {
+    sendMetrics("hit", window.location.href);
+  }, [history]);
   return (
     <NavMenuStyles>
       <div
@@ -101,7 +106,7 @@ export default function NavMenu() {
       >
         <MdMenu />
       </div>
-      <ul className={!showNav ? 'navItems hide-item' : 'navItems'}>
+      <ul className={!showNav ? "navItems hide-item" : "navItems"}>
         <div
           className="closeNavIcon"
           onClick={() => setShowNav(!showNav)}
